@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 15-12-2021 a las 00:58:42
+-- Tiempo de generación: 15-12-2021 a las 01:17:16
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 7.3.28
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `gestion-estudiantes`
 --
+CREATE DATABASE IF NOT EXISTS `gestion-estudiantes` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `gestion-estudiantes`;
 
 -- --------------------------------------------------------
 
