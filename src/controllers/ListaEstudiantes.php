@@ -20,3 +20,17 @@ class ListaEstudiantes
     include_once __DIR__.'/../views/listaEstudiantes.php';
   }
 }
+
+class AgregarEstudiantes
+{
+  private $estudiantesModel;
+
+  public function __construct($datos)
+  {
+    // Obtenemos el listado de estudiantes
+    $this->estudiantesModel = new EstudiantesModel();
+    $result = $this->estudiantesModel->addEstudiante($datos);
+
+    return $result;//Confirma que fue agregado o no.
+  }
+}

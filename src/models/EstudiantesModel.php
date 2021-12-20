@@ -18,4 +18,10 @@ class EstudiantesModel
     // TODO
     return [];
   }
+
+  public function addEstudiante($datos)
+  {
+    // TODO
+    return true;
+  }
 }
