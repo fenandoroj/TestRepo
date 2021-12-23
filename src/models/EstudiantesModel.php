@@ -10,7 +10,15 @@ class EstudiantesModel
 
   public function __construct()
   {
-    // TODO: Inicializar conexión a la base de datos en $bdConection
+    // TODO: Inicializar conexión a la base de datos en $bdConection7
+    $bdConnection = new mysqli('localhost', 'root', '', 'gestion-estudiantes');
+    echo 'aqui 15';
+    if($bdConnection->connect_error){
+      echo 'aqui 17';
+      die('Error de Conexion ('.$bdConnection->connect_errno.')'.$bdConnection->connect_error);
+    }
+    echo 'Exito '.$bdConnection->host_info;
+    $bdConnection->close();
   }
 
   public function getEstudiantes()
@@ -25,3 +33,4 @@ class EstudiantesModel
     return true;
   }
 }
+?>

@@ -34,3 +34,4 @@ class AgregarEstudiantes
     return $result;//Confirma que fue agregado o no.
   }
 }
+?>
