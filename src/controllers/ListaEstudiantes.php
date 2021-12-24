@@ -10,10 +10,10 @@ class ListaEstudiantes
 
   private $estudiantesModel;
 
-  public function __construct()
+  public function __construct($bdConnection)
   {
     // Obtenemos el listado de estudiantes
-    $this->estudiantesModel = new EstudiantesModel();
+    $this->estudiantesModel = new EstudiantesModel($bdConnection);
     $estudiantes = $this->estudiantesModel->getEstudiantes();
 
     // Imprimimos los estudiantes
@@ -24,14 +24,21 @@ class ListaEstudiantes
 class AgregarEstudiantes
 {
   private $estudiantesModel;
+  private $estudiante;
 
-  public function __construct($datos)
+  public function __construct($bdConnection, $nombre, $apellidos, $email,$prefijoTelefono,$telefono,$tipoIdentificacion,$numeroIdentificacion)
   {
-    // Obtenemos el listado de estudiantes
-    $this->estudiantesModel = new EstudiantesModel();
-    $result = $this->estudiantesModel->addEstudiante($datos);
-
-    return $result;//Confirma que fue agregado o no.
+    
+    $this->estudiantesModel = new EstudiantesModel($bdConnection);
+    $this->estudiante = new Estudiante($nombre, $apellidos, $email,$prefijoTelefono,$telefono,$tipoIdentificacion,$numeroIdentificacion);    
+    $result = $this->estudiantesModel->addEstudiante($this->estudiante);
+    /* Ejemplo para probar actualización y eliminación de estudiante.
+    echo ' id estudiante '.$result;
+    echo $this->estudiantesModel->getEstudianteByPersonaID($result)->personaId;
+    $this->estudiante->nombre='nombreActualizado';
+    $this->estudiantesModel->updateEstudiante($this->estudiante);
+    $this->estudiantesModel->delEstudiante($this->estudiante);
+    */
   }
 }
 ?>
