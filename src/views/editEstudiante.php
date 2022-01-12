@@ -39,7 +39,11 @@
             </div>
             <div class="mb-1">
                 <label for="inputTipoId" class="form-label">Tipo Identificación</label>
-                <input type="text" class="form-control" id="inputTipoId" name="inputTipoId" value= "<?php echo $result->tipoIdentificacion ; ?>">
+                <select class="form-control form-select" aria-label="Default select example" id="inputTipoId" name="inputTipoId">
+                    <option value="DNI" <?php if ($result->tipoIdentificacion == 'DNI') echo 'selected' ?>>DNI - Documento Nacional de Identidad</option>
+                    <option value="NIE" <?php if ($result->tipoIdentificacion == 'NIE') echo 'selected' ?>>NIE - Número de Identificación de Extranjeros</option>
+                    <option value="PASSPORT" <?php if ($result->tipoIdentificacion == 'PASSPORT') echo 'selected' ?>>Pasaporte</option>
+                </select>
             </div>
             <div class="mb-1">
                 <label for="inputNumId" class="form-label">N° Identificación</label>
