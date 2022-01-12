@@ -1,5 +1,7 @@
 <?php
-// Index
+
+
+// // Index
 require_once  './src/models/ConexionBD.php';
 $conexionBD = new ConexionBD();
 $bdConnection = $conexionBD->getConexionBD();
@@ -14,4 +16,4 @@ $tipoIdentificacion = 'tes';
 $numeroIdentificacion = '123456789';
 $AgregarEstudiantes = new AgregarEstudiantes($bdConnection, $nombre, $apellidos, $email,$prefijoTelefono,$telefono,$tipoIdentificacion,$numeroIdentificacion);
 */
-?>;
+?>

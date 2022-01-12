@@ -2,11 +2,13 @@
 
 // Comprobamos que no se accede directamente a este fichero consultando una constante
 defined('_APPINIT') or exit('Acceso restringido');
+// require_once  './src/models/ConexionBD.php';
 require_once 'PersonaModel.php';
 class EstudiantesModel
 {
   private $bdConnection;
   private $table;
+  
   public function __construct($bdConnection)
   {
     // TODO: Inicializar conexión a la base de datos en $bdConection7
@@ -14,27 +16,31 @@ class EstudiantesModel
     $this->bdConnection = $bdConnection;    
   }
 
+
   public function getEstudiantes()
   {
     // TODO
-    $query = "SELECT Personas.*, Estudiantes.* FROM ".$this->table." INNER JOIN Personas ON Personas.id = Estudiantes.personaId";
+    $query = "SELECT Personas.nombre, Personas.apellidos, Estudiantes.* FROM ".$this->table." INNER JOIN Personas ON Personas.id = Estudiantes.personaId";
     $result = $this->bdConnection->query($query); 
-    if(!$this->bdConnection->error){
-      echo "Obtenidos estudiantes";      
-    }else{
-      echo "Error obtener estudiantes: ".$query."<br> Error". $this->bdConnection->error."<br>";
-    } 
-    return $result->fetch_array();    
+    // if(!$this->bdConnection->error){
+    //   echo "Obtenidos estudiantes";      
+    // }else{
+    //   echo "Error obtener estudiantes: ".$query."<br> Error". $this->bdConnection->error."<br>";
+    // } 
+    return $result;    
   }
 
   public function getEstudianteByPersonaID($personaID){
     $query = "SELECT Personas.*, Estudiantes.* FROM ".$this->table." INNER JOIN Personas ON Personas.id = Estudiantes.personaId WHERE personaId=".$personaID;
     $result = $this->bdConnection->query($query);    
-    if(!$this->bdConnection->error){
-      echo "Estudiante obtenido";      
-    }else{
+    // if(!$this->bdConnection->error){
+    //   echo "Estudiante obtenido";      
+    // }else{
+    //   echo "Error obtener estudiante: ".$query."<br>". $this->bdConnection->error;
+    // } 
+    if($this->bdConnection->error){
       echo "Error obtener estudiante: ".$query."<br>". $this->bdConnection->error;
-    } 
+    }
     return $result->fetch_object();  
   }
 

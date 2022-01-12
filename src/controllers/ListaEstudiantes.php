@@ -9,13 +9,15 @@ class ListaEstudiantes
 {
 
   private $estudiantesModel;
-
+  
+  
   public function __construct($bdConnection)
   {
     // Obtenemos el listado de estudiantes
     $this->estudiantesModel = new EstudiantesModel($bdConnection);
     $estudiantes = $this->estudiantesModel->getEstudiantes();
 
+    
     // Imprimimos los estudiantes
     include_once __DIR__.'/../views/listaEstudiantes.php';
   }
@@ -32,6 +34,9 @@ class AgregarEstudiantes
     $this->estudiantesModel = new EstudiantesModel($bdConnection);
     $this->estudiante = new Estudiante($nombre, $apellidos, $email,$prefijoTelefono,$telefono,$tipoIdentificacion,$numeroIdentificacion);    
     $result = $this->estudiantesModel->addEstudiante($this->estudiante);
+
+    include_once __DIR__.'/../views/addEstudiante.php';
+    
     /* Ejemplo para probar actualización y eliminación de estudiante.
     echo ' id estudiante '.$result;
     echo $this->estudiantesModel->getEstudianteByPersonaID($result)->personaId;
@@ -39,6 +44,22 @@ class AgregarEstudiantes
     $this->estudiantesModel->updateEstudiante($this->estudiante);
     $this->estudiantesModel->delEstudiante($this->estudiante);
     */
+  }
+}
+
+class EstudianteByID
+{
+  private $estudiantesModel;
+
+
+  public function __construct($bdConnection, $id)
+  {
+    
+    $this->estudiantesModel = new EstudiantesModel($bdConnection);
+    
+    $result = $this->estudiantesModel->getEstudianteByPersonaID($id);
+
+    include_once __DIR__.'/../views/EditEstudiante.php';
   }
 }
 ?>
