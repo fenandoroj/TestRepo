@@ -38,15 +38,15 @@
             </div>
             <div class="mb-1">
                 <label for="inputTipoId" class="form-label">Tipo Identificación</label>
-                <input type="text" class="form-control" id="inputTipoId" name="inputTipoId">
-            </div>
-            <div class="mb-1">
-                <label for="inputNumId" class="form-label">N° Identificación</label>
                 <select class="form-control form-select" aria-label="Default select example" id="inputTipoId" name="inputTipoId">
                     <option value="DNI">DNI - Documento Nacional de Identidad</option>
                     <option value="NIE">NIE - Número de Identificación de Extranjeros</option>
                     <option value="PASSPORT">Pasaporte</option>
                 </select>
+            </div>
+            <div class="mb-1">
+                <label for="inputNumId" class="form-label">N° Identificación</label>
+                <input type="text" class="form-control" id="inputNumId" name="inputNumId">
             </div>
 
             <div class="mb-1">
