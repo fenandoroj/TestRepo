@@ -1,10 +1,14 @@
+<?php
+// Comprobamos que no se accede directamente a este fichero consultando una constante
+defined('_APPINIT') or exit('Acceso restringido');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index::</title>
+    <title><?= $titulo ?></title>
     <!-- FontAwesome, iconos -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
@@ -16,14 +20,15 @@
     <div class="container">
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"> 
             <ul class="nav nav-pills">
-                <li class="nav-item"><a href="/gestion-estudiantes/index.php" class="nav-link" aria-current="page">Estudiantes</a></li>
-                <li class="nav-item"><a href="src/views/asignaturas.php" class="nav-link">Asignaturas</a></li>
-                <li class="nav-item"><a href="src/views/profesores.php" class="nav-link">Profesores</a></li>
+                <li class="nav-item"><a href="index.php" class="nav-link" aria-current="page">Estudiantes</a></li>
+                <li class="nav-item"><a href="asignaturas.php" class="nav-link">Asignaturas</a></li>
+                <li class="nav-item"><a href="profesores.php" class="nav-link">Profesores</a></li>
             </ul>
         </header>   
     </div>
     
     <div class="container">
+        <h1>¿Eliminar estudiante?</h1>
         <form action="delete-student.php" method="POST">
             <div class="mb-1">
                 <input type="hidden" class="form-control" id="personaId" name="personaId" value= "<?php echo $result->personaId ; ?>" >

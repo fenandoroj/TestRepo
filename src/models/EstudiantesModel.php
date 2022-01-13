@@ -1,7 +1,7 @@
 <?php
-
 // Comprobamos que no se accede directamente a este fichero consultando una constante
 defined('_APPINIT') or exit('Acceso restringido');
+
 // require_once  './src/models/ConexionBD.php';
 require_once 'PersonaModel.php';
 class EstudiantesModel
@@ -101,15 +101,15 @@ class Estudiante extends Persona{
   public $telefono;
   public $tipoIdentificacion;
   public $numeroIdentificacion;
-  public function __construct($nombre, $apellidos, $email,$prefijoTelefono,$telefono,$tipoIdentificacion,$numeroIdentificacion)
+  public function __construct($estudiante)
   {
-    $this->nombre = $nombre;
-    $this->apellidos = $apellidos;
-    $this->email = $email;
-    $this->prefijoTelefono = $prefijoTelefono;
-    $this->telefono = $telefono;
-    $this->tipoIdentificacion = $tipoIdentificacion;
-    $this->numeroIdentificacion = $numeroIdentificacion;    
+    $this->nombre = $estudiante['nombre'];
+    $this->apellidos = $estudiante['apellidos'];
+    $this->email = $estudiante['email'];
+    $this->prefijoTelefono = $estudiante['prefijoTelefono'];
+    $this->telefono = $estudiante['telefono'];
+    $this->tipoIdentificacion = $estudiante['tipoIdentificacion'];
+    $this->numeroIdentificacion = $estudiante['numeroIdentificacion'];    
   }
 
   public function setPersonaID($personaId){

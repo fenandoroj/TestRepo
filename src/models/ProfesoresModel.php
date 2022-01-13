@@ -1,8 +1,7 @@
 <?php
-
 // Comprobamos que no se accede directamente a este fichero consultando una constante
 defined('_APPINIT') or exit('Acceso restringido');
-// require_once  './src/models/ConexionBD.php';
+
 require_once 'PersonaModel.php';
 class ProfesoresModel
 {
@@ -11,14 +10,12 @@ class ProfesoresModel
   
   public function __construct($bdConnection)
   {
-    // TODO: Inicializar conexión a la base de datos en $bdConection7
     $this->table = 'profesores';
     $this->bdConnection = $bdConnection;    
   }
 
   public function getProfesores()
   {
-    // TODO
     $query = "SELECT Personas.nombre, Personas.apellidos, profesores.* FROM ".$this->table." INNER JOIN Personas ON Personas.id = profesores.personaId";
     $result = $this->bdConnection->query($query); 
 

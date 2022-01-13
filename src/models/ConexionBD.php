@@ -1,4 +1,7 @@
 <?php
+// Comprobamos que no se accede directamente a este fichero consultando una constante
+defined('_APPINIT') or exit('Acceso restringido');
+
 class ConexionBD{
     private $bdConnection;
     public function __construct()

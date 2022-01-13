@@ -9,7 +9,7 @@ defined('_APPINIT') or exit('Acceso restringido');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index::</title>
+    <title><?= $titulo ?> </title>
     <!-- FontAwesome, iconos -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
@@ -22,8 +22,8 @@ defined('_APPINIT') or exit('Acceso restringido');
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"> 
             <ul class="nav nav-pills">
                 <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Estudiantes</a></li>
-                <li class="nav-item"><a href="src/views/asignaturas.php" class="nav-link">Asignaturas</a></li>
-                <li class="nav-item"><a href="src/views/profesores.php" class="nav-link">Profesores</a></li>
+                <li class="nav-item"><a href="asignaturas.php" class="nav-link">Asignaturas</a></li>
+                <li class="nav-item"><a href="profesores.php" class="nav-link">Profesores</a></li>
             </ul>
         </header>   
     </div>
@@ -32,7 +32,7 @@ defined('_APPINIT') or exit('Acceso restringido');
       <table class="table">
         <thead>
           <tr>
-            <th colspan="6" class="text-right"><a class="btn btn-success btn-sm" href="src/views/addEstudiante.php" role="button">Agregar</a></th>
+            <th colspan="6" class="text-right"><a class="btn btn-success btn-sm" href="addEstudiante.php" role="button">Agregar</a></th>
           </tr>
           <tr>
             <th scope="col">#</th>
@@ -56,8 +56,8 @@ defined('_APPINIT') or exit('Acceso restringido');
               //echo "<td><a class=\"btn btn-default\"><span class=\"fa-user-edit\"></span></a></td>";
               echo "<td>
               <div class='btn-group' role='group' > 
-                <a href = 'src/views/id-student.php?id=".$value["personaId"] . "' class='btn btn-outline-primary btn-sm'>Editar</a>
-                <a  href = 'src/views/del-studentId.php?id=".$value["personaId"] . "' class='btn btn-outline-primary btn-sm'>Eliminar</a>
+                <a href = 'id-student.php?id=".$value["personaId"] . "' class='btn btn-outline-primary btn-sm'>Editar</a>
+                <a  href = 'del-studentId.php?id=".$value["personaId"] . "' class='btn btn-outline-primary btn-sm'>Eliminar</a>
               </div></td>";
               echo "</tr>";              
               $i++;
