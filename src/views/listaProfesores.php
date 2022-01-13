@@ -30,6 +30,13 @@ defined('_APPINIT') or exit('Acceso restringido');
     <div class="container">
     
       <table class="table">
+      <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombres</th>
+            <th scope="col">Apellidos</th>
+          </tr>
+        </thead>
         <tbody>
         <?php
           $i = 1;
