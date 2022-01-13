@@ -3,10 +3,11 @@ class ConexionBD{
     private $bdConnection;
     public function __construct()
     {
-    // TODO: Inicializar conexión a la base de datos en $bdConection
+        //Inicializar conexión a la base de datos en $bdConection
         $this->setConexionBD();
     }
     public function getConexionBD(){
+        //Obtener conexión a la base de datos en $bdConection
         return $this->bdConnection;
     }
 
@@ -19,6 +20,7 @@ class ConexionBD{
     }
 
     public function closeConexionBD(){
+        //Cerrar conexión a la base de datos en $bdConection
         $this->bdConnection->close();
     }
 }

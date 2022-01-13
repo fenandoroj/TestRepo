@@ -22,43 +22,45 @@
             </ul>
         </header>   
     </div>
+    
     <div class="container">
-        <form action="create-student.php" method="POST">
+        <form action="delete-student.php" method="POST">
             <div class="mb-1">
+                <input type="hidden" class="form-control" id="personaId" name="personaId" value= "<?php echo $result->personaId ; ?>" >
                 <label for="inputName" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="inputName" name="inputName" >
+                <input type="text" class="form-control" id="inputName" name="inputName" value= "<?php echo $result->nombre ; ?>" readonly>
             </div>
             <div class="mb-1">
                 <label for="inputApellido" class="form-label">Apellido</label>
-                <input type="text" class="form-control" id="inputApellido" name="inputApellido" >
+                <input type="text" class="form-control" id="inputApellido" name="inputApellido" value= "<?php echo $result->apellidos ; ?>" readonly>
             </div>
             <div class="mb-1">
                 <label for="inputEmail" class="form-label">Email</label>
-                <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" name="inputEmail">
+                <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" name="inputEmail" value= "<?php echo $result->email ; ?>" readonly>
             </div>
             <div class="mb-1">
                 <label for="inputTipoId" class="form-label">Tipo Identificación</label>
-                <select class="form-control form-select" aria-label="Default select example" id="inputTipoId" name="inputTipoId">
-                    <option value="DNI">DNI - Documento Nacional de Identidad</option>
-                    <option value="NIE">NIE - Número de Identificación de Extranjeros</option>
-                    <option value="PASSPORT">Pasaporte</option>
+                <select class="form-control form-select" aria-label="Default select example" id="inputTipoId" name="inputTipoId" readonly>
+                    <option value="DNI" <?php if ($result->tipoIdentificacion == 'DNI') echo 'selected' ?>>DNI - Documento Nacional de Identidad</option>
+                    <option value="NIE" <?php if ($result->tipoIdentificacion == 'NIE') echo 'selected' ?>>NIE - Número de Identificación de Extranjeros</option>
+                    <option value="PASSPORT" <?php if ($result->tipoIdentificacion == 'PASSPORT') echo 'selected' ?>>Pasaporte</option>
                 </select>
             </div>
             <div class="mb-1">
                 <label for="inputNumId" class="form-label">N° Identificación</label>
-                <input type="text" class="form-control" id="inputNumId" name="inputNumId">
+                <input type="text" class="form-control" id="inputNumId" name="inputNumId" value= "<?php echo $result->numeroIdentificacion ; ?>" readonly>
             </div>
 
             <div class="mb-1">
                 <label for="inputPrefijoTel" class="form-label">Prefijo Teléfono</label>
-                <input type="text" class="form-control" id="inputPrefijoTel" name="inputPrefijoTel">
+                <input type="text" class="form-control" id="inputPrefijoTel" name="inputPrefijoTel" value= "<?php echo $result->prefijoTelefono ; ?>" readonly>
             </div>
             <div class="mb-1">
                 <label for="inputNumTel" class="form-label">N° Teléfono</label>
-                <input type="text" class="form-control" id="inputNumTel" name="inputNumTel">
+                <input type="text" class="form-control" id="inputNumTel" name="inputNumTel" value= "<?php echo $result->telefono ; ?>" readonly>
             </div>
 
-            <button type="submit" class="btn btn-primary">Registrarse</button>
+            <button type="submit" class="btn btn-primary">Eliminar</button>
         </form>
     </div>
 </body>

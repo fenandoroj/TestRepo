@@ -1,6 +1,6 @@
 <?php
 // Create Student
-require_once  './src/models/ConexionBD.php';
+require_once  '../models/ConexionBD.php';
 $conexionBD = new ConexionBD();
 $bdConnection = $conexionBD->getConexionBD();
 
@@ -10,8 +10,8 @@ define('_APPINIT', 1);
 
 
 $id = $_GET["id"];
-require './src/controllers/ListaEstudiantes.php';
-new EstudianteByID($bdConnection, $id);
+require '../controllers/ListaEstudiantes.php';
+new EstudianteByIDDelete($bdConnection, $id);
 
 
 ?>

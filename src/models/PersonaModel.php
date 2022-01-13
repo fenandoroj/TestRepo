@@ -12,9 +12,9 @@ class PersonaModel{
         $query = "INSERT INTO ".$this->table."(nombre, apellidos) 
         VALUES ( '".$persona->nombre."','".$persona->apellidos."')";
         if($this->bdConnection->query($query)=== TRUE){
-            echo "Creado persona";
+            //echo "Creado persona";
         }else{
-            echo "Error crear persona: ".$query."<br>". $this->bdConnection->error;
+            //echo "Error crear persona: ".$query."<br>". $this->bdConnection->error;
         } 
         return $this->bdConnection->insert_id;
     }
@@ -22,10 +22,10 @@ class PersonaModel{
     public function delPersona($persona){
         $query = "DELETE FROM ".$this->table." WHERE id = ".$persona->id;
         if($this->bdConnection->query($query)=== TRUE){
-          echo "eliminada persona";
+          //echo "eliminada persona";
           return true;
         }else{
-          echo "Error eliminar persona: ".$query."<br>". $this->bdConnection->error;
+          //echo "Error eliminar persona: ".$query."<br>". $this->bdConnection->error;
           return false;
         }     
     }
@@ -36,10 +36,10 @@ class PersonaModel{
         apellidos='".$persona->apellidos.
         "' WHERE id=".$persona->id;
         if($this->bdConnection->query($query)=== TRUE){
-          echo "Actualizado estudiante";          
+          //echo "Actualizado estudiante";          
           return true;    
         }else{
-          echo "Error actualizar estudiante: ".$query."<br>". $this->bdConnection->error;
+          //echo "Error actualizar estudiante: ".$query."<br>". $this->bdConnection->error;
           return false;
         }
     

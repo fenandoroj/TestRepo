@@ -50,14 +50,14 @@ class EstudiantesModel
     $personaModel = new PersonaModel($this->bdConnection);
     $personaId = $personaModel->addPersona($estudiante);
     $estudiante->setPersonaID($personaId);
-    echo 'personaID '.$estudiante->personaId;
+    //echo 'personaID '.$estudiante->personaId;
     $query = "INSERT INTO ".$this->table."(personaId, email, prefijoTelefono, telefono,tipoIdentificacion,numeroIdentificacion) 
     VALUES ( '".$personaId."','".$estudiante->email."','".$estudiante->prefijoTelefono."','".$estudiante->telefono."','".$estudiante->tipoIdentificacion."','".$estudiante->numeroIdentificacion."')";
     if($this->bdConnection->query($query)=== TRUE){
-      echo "Creado estudiante";
+      //echo "Creado estudiante";
       return $personaId;
     }else{
-      echo "Error estudiante: ".$query."<br>". $this->bdConnection->error;
+      //echo "Error estudiante: ".$query."<br>". $this->bdConnection->error;
     } 
     return -1;
     
@@ -66,11 +66,11 @@ class EstudiantesModel
   public function delEstudiante($estudiante){
     $query = "DELETE FROM ".$this->table." WHERE personaId = ".$estudiante->personaId;
     if($this->bdConnection->query($query)=== TRUE){
-      echo "Eliminado estudiante";      
+      //echo "Eliminado estudiante";      
       $personaModel = new PersonaModel($this->bdConnection);
       return $personaModel->delPersona($estudiante);
     }else{
-      echo "Error estudiante: ".$query."<br>". $this->bdConnection->error;
+      //echo "Error estudiante: ".$query."<br>". $this->bdConnection->error;
       return false;
     }     
   }
@@ -83,11 +83,11 @@ class EstudiantesModel
     tipoIdentificacion='".$estudiante->tipoIdentificacion."',
     numeroIdentificacion='".$estudiante->numeroIdentificacion."' WHERE personaId=".$estudiante->personaId;
     if($this->bdConnection->query($query)=== TRUE){
-      echo "Actualizado estudiante"; 
+      //echo "Actualizado estudiante"; 
       $personaModel = new PersonaModel($this->bdConnection);
       return $personaModel->updatePersona($estudiante);     
     }else{
-      echo "Error actualizar estudiante: ".$query."<br>". $this->bdConnection->error;
+      //echo "Error actualizar estudiante: ".$query."<br>". $this->bdConnection->error;
       return false;
     }
 

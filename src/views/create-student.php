@@ -1,6 +1,6 @@
 <?php
 // Create Student
-require_once  './src/models/ConexionBD.php';
+require_once  '../models/ConexionBD.php';
 $conexionBD = new ConexionBD();
 $bdConnection = $conexionBD->getConexionBD();
 
@@ -16,9 +16,8 @@ $nuevo = array(
   $_POST["inputNumTel"],
   $_POST["inputTipoId"],
   $_POST["inputNumId"]
-); //Array con los datos del nuevo usuario    
-echo $nuevo[5];
-require './src/controllers/ListaEstudiantes.php';
+); //Array con los datos del nuevo usuario
+require '../controllers/ListaEstudiantes.php';
 new AgregarEstudiantes($bdConnection,$nuevo[0], $nuevo[1], $nuevo[2], $nuevo[3], $nuevo[4], $nuevo[5], $nuevo[6]);
 
 
