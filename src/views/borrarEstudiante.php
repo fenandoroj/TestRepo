@@ -20,16 +20,16 @@ defined('_APPINIT') or exit('Acceso restringido');
     <div class="container">
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"> 
             <ul class="nav nav-pills">
-                <li class="nav-item"><a href="index.php" class="nav-link" aria-current="page">Estudiantes</a></li>
-                <li class="nav-item"><a href="asignaturas.php" class="nav-link">Asignaturas</a></li>
-                <li class="nav-item"><a href="profesores.php" class="nav-link">Profesores</a></li>
+                <li class="nav-item"><a href="/gestion-estudiantes/index.php" class="nav-link" aria-current="page">Estudiantes</a></li>
+                <li class="nav-item"><a href="/gestion-estudiantes/src/controllers/asignaturas.php" class="nav-link">Asignaturas</a></li>
+                <li class="nav-item"><a href="/gestion-estudiantes/src/controllers/profesores.php" class="nav-link">Profesores</a></li>
             </ul>
         </header>   
     </div>
     
     <div class="container">
         <h1>¿Eliminar estudiante?</h1>
-        <form action="delete-student.php" method="POST">
+        <form action="/gestion-estudiantes/src/controllers/delete-student.php" method="POST">
             <div class="mb-1">
                 <input type="hidden" class="form-control" id="personaId" name="personaId" value= "<?php echo $result->personaId ; ?>" >
                 <label for="inputName" class="form-label">Nombre</label>

@@ -18,6 +18,6 @@ defined('_APPINIT') or exit('Acceso restringido');
 <body>
   <div class="container text-center">
     <h1 class="mt-5 mb-3"><?=$titulo ?></h1>
-    <a href="index.php" class="btn btn-primary">Aceptar</a>
+    <a href="/gestion-estudiantes/index.php" class="btn btn-primary">Aceptar</a>
   </div>
 </body>

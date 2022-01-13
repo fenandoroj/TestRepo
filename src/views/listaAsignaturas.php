@@ -23,7 +23,7 @@ defined('_APPINIT') or exit('Acceso restringido');
             <ul class="nav nav-pills">
                 <li class="nav-item"><a href="/gestion-estudiantes/index.php" class="nav-link">Estudiantes</a></li>
                 <li class="nav-item"><a href="#" class="nav-link  active" aria-current="page">Asignaturas</a></li>
-                <li class="nav-item"><a href="profesores.php" class="nav-link">Profesores</a></li>
+                <li class="nav-item"><a href="/gestion-estudiantes/src/controllers/profesores.php" class="nav-link">Profesores</a></li>
             </ul>
         </header>   
     </div>

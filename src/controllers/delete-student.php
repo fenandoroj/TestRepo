@@ -3,8 +3,8 @@
 define('_APPINIT', 1);
 
 // Create Student
-require_once  __DIR__ . '/src/models/ConexionBD.php';
-require_once  __DIR__ . '/src/models/EstudiantesModel.php';
+require_once  __DIR__ . '/../models/ConexionBD.php';
+require_once  __DIR__ . '/../models/EstudiantesModel.php';
 
 $conexionBD = new ConexionBD();
 $bdConnection = $conexionBD->getConexionBD();
@@ -31,6 +31,6 @@ $result = $estudiantesModel->delEstudiante($estudiante);
 $titulo = !$result ? 'Error al eliminar el estudiante' : 'Estudiante eliminado correctamente';
 
 // Vista de actualización de estudiante. Podemos reutilizar la vista de estudiante creado
-include_once __DIR__ . '/src/views/student-created.php';
+include_once __DIR__ . '/../views/student-created.php';
 
 $conexionBD->closeConexionBD(); // Cerrar conexión a la base de datos

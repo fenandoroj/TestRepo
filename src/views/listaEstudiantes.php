@@ -22,8 +22,8 @@ defined('_APPINIT') or exit('Acceso restringido');
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"> 
             <ul class="nav nav-pills">
                 <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Estudiantes</a></li>
-                <li class="nav-item"><a href="asignaturas.php" class="nav-link">Asignaturas</a></li>
-                <li class="nav-item"><a href="profesores.php" class="nav-link">Profesores</a></li>
+                <li class="nav-item"><a href="/gestion-estudiantes/src/controllers/asignaturas.php" class="nav-link">Asignaturas</a></li>
+                <li class="nav-item"><a href="/gestion-estudiantes/src/controllers/profesores.php" class="nav-link">Profesores</a></li>
             </ul>
         </header>   
     </div>
@@ -32,7 +32,7 @@ defined('_APPINIT') or exit('Acceso restringido');
       <table class="table">
         <thead>
           <tr>
-            <th colspan="6" class="text-right"><a class="btn btn-success btn-sm" href="addEstudiante.php" role="button">Agregar</a></th>
+            <th colspan="6" class="text-right"><a class="btn btn-success btn-sm" href="/gestion-estudiantes/src/controllers/addEstudiante.php" role="button">Agregar</a></th>
           </tr>
           <tr>
             <th scope="col">#</th>
@@ -57,7 +57,7 @@ defined('_APPINIT') or exit('Acceso restringido');
               echo "<td>
               <div class='btn-group' role='group' > 
                 <a href = 'id-student.php?id=".$value["personaId"] . "' class='btn btn-outline-primary btn-sm'>Editar</a>
-                <a  href = 'del-studentId.php?id=".$value["personaId"] . "' class='btn btn-outline-primary btn-sm'>Eliminar</a>
+                <a  href = '/gestion-estudiantes/src/controllers/del-studentId.php?id=".$value["personaId"] . "' class='btn btn-outline-primary btn-sm'>Eliminar</a>
               </div></td>";
               echo "</tr>";              
               $i++;

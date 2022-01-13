@@ -20,9 +20,9 @@ defined('_APPINIT') or exit('Acceso restringido');
     <div class="container">
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"> 
             <ul class="nav nav-pills">
-                <li class="nav-item"><a href="index.php" class="nav-link" aria-current="page">Estudiantes</a></li>
-                <li class="nav-item"><a href="asignaturas.php" class="nav-link">Asignaturas</a></li>
-                <li class="nav-item"><a href="profesores.php" class="nav-link">Profesores</a></li>
+                <li class="nav-item"><a href="/gestion-estudiantes/index.php" class="nav-link" aria-current="page">Estudiantes</a></li>
+                <li class="nav-item"><a href="/gestion-estudiantes/src/controllers/asignaturas.php" class="nav-link">Asignaturas</a></li>
+                <li class="nav-item"><a href="/gestion-estudiantes/src/controllers/profesores.php" class="nav-link">Profesores</a></li>
             </ul>
         </header>   
     </div>

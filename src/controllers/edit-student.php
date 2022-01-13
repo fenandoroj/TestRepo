@@ -4,8 +4,8 @@
 // Variable global para restringir el acceso directo a otros ficheros
 define('_APPINIT', 1);
 
-require_once  __DIR__ . '/src/models/ConexionBD.php';
-require_once  __DIR__ . '/src/models/EstudiantesModel.php';
+require_once  __DIR__ . '/../models/ConexionBD.php';
+require_once  __DIR__ . '/../models/EstudiantesModel.php';
 
 $conexionBD = new ConexionBD();
 $bdConnection = $conexionBD->getConexionBD();
@@ -29,6 +29,6 @@ $result = $estudiantesModel->updateEstudiante($estudiante);
 $titulo = !$result ? 'Error al actualizar el estudiante' : 'Estudiante actualizado correctamente';
 
 // Vista de actualización de estudiante. Podemos reutilizar la vista de estudiante creado
-include_once __DIR__ . '/src/views/student-created.php';
+include_once __DIR__ . '/../views/student-created.php';
 
 $conexionBD->closeConexionBD(); // Cerrar conexión a la base de datos

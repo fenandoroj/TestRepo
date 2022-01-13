@@ -3,8 +3,8 @@
 // Variable global para restringir el acceso directo a otros ficheros
 define('_APPINIT', 1);
 
-require_once  __DIR__ . '/src/models/ConexionBD.php';
-require_once  __DIR__ . '/src/models/EstudiantesModel.php';
+require_once  __DIR__ . '/../models/ConexionBD.php';
+require_once  __DIR__ . '/../models/EstudiantesModel.php';
 
 $conexionBD = new ConexionBD();
 $bdConnection = $conexionBD->getConexionBD();
@@ -26,4 +26,4 @@ $insercion = $estudiantesModel->addEstudiante($estudiante);
 $titulo = $insercion == -1 ? 'Error al agregar el estudiante' : 'Estudiante agregado correctamente';
 
 // Vista de confirmación de estudiante
-include_once __DIR__ . '/src/views/student-created.php';
+include_once __DIR__ . '/../views/student-created.php';

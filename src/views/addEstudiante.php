@@ -20,15 +20,15 @@ defined('_APPINIT') or exit('Acceso restringido');
     <div class="container">
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"> 
             <ul class="nav nav-pills">
-                <li class="nav-item"><a href="index.php" class="nav-link" aria-current="page">Estudiantes</a></li>
-                <li class="nav-item"><a href="asignaturas.php" class="nav-link">Asignaturas</a></li>
-                <li class="nav-item"><a href="profesores.php" class="nav-link">Profesores</a></li>
+                <li class="nav-item"><a href="/gestion-estudiantes/index.php" class="nav-link" aria-current="page">Estudiantes</a></li>
+                <li class="nav-item"><a href="/gestion-estudiantes/src/controllers/asignaturas.php" class="nav-link">Asignaturas</a></li>
+                <li class="nav-item"><a href="/gestion-estudiantes/src/controllers/profesores.php" class="nav-link">Profesores</a></li>
             </ul>
         </header>   
     </div>
     <div class="container">
         <h1><?= $titulo ?></h1>
-        <form action="create-student.php" method="POST">
+        <form action="/gestion-estudiantes/src/controllers/create-student.php" method="POST">
             <div class="mb-1">
                 <label for="inputName" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="inputName" name="inputName" >
