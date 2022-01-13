@@ -56,7 +56,7 @@ defined('_APPINIT') or exit('Acceso restringido');
               //echo "<td><a class=\"btn btn-default\"><span class=\"fa-user-edit\"></span></a></td>";
               echo "<td>
               <div class='btn-group' role='group' > 
-                <a href = 'id-student.php?id=".$value["personaId"] . "' class='btn btn-outline-primary btn-sm'>Editar</a>
+                <a href = '/gestion-estudiantes/src/controllers/id-student.php?id=".$value["personaId"] . "' class='btn btn-outline-primary btn-sm'>Editar</a>
                 <a  href = '/gestion-estudiantes/src/controllers/del-studentId.php?id=".$value["personaId"] . "' class='btn btn-outline-primary btn-sm'>Eliminar</a>
               </div></td>";
               echo "</tr>";              

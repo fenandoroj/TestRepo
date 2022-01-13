@@ -29,7 +29,7 @@ defined('_APPINIT') or exit('Acceso restringido');
     
     <div class="container">
         <h1>Estudiante:</h1>
-        <form action="edit-student.php" method="POST">
+        <form action="/gestion-estudiantes/src/controllers/edit-student.php" method="POST">
             <div class="mb-1">
                 <input type="hidden" class="form-control" id="personaId" name="personaId" value= "<?php echo $result->personaId ; ?>" >
                 <label for="inputName" class="form-label">Nombre</label>
