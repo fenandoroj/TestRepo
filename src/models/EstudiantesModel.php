@@ -11,7 +11,6 @@ class EstudiantesModel
   
   public function __construct($bdConnection)
   {
-    // TODO: Inicializar conexión a la base de datos en $bdConection7
     $this->table = 'estudiantes';
     $this->bdConnection = $bdConnection;    
   }
@@ -19,25 +18,15 @@ class EstudiantesModel
 
   public function getEstudiantes()
   {
-    // TODO
     $query = "SELECT Personas.nombre, Personas.apellidos, Estudiantes.* FROM ".$this->table." INNER JOIN Personas ON Personas.id = Estudiantes.personaId";
     $result = $this->bdConnection->query($query); 
-    // if(!$this->bdConnection->error){
-    //   echo "Obtenidos estudiantes";      
-    // }else{
-    //   echo "Error obtener estudiantes: ".$query."<br> Error". $this->bdConnection->error."<br>";
-    // } 
     return $result;    
   }
 
   public function getEstudianteByPersonaID($personaID){
     $query = "SELECT Personas.*, Estudiantes.* FROM ".$this->table." INNER JOIN Personas ON Personas.id = Estudiantes.personaId WHERE personaId=".$personaID;
     $result = $this->bdConnection->query($query);    
-    // if(!$this->bdConnection->error){
-    //   echo "Estudiante obtenido";      
-    // }else{
-    //   echo "Error obtener estudiante: ".$query."<br>". $this->bdConnection->error;
-    // } 
+
     if($this->bdConnection->error){
       echo "Error obtener estudiante: ".$query."<br>". $this->bdConnection->error;
     }
@@ -46,31 +35,24 @@ class EstudiantesModel
 
   public function addEstudiante($estudiante)
   {
-    // TODO
     $personaModel = new PersonaModel($this->bdConnection);
     $personaId = $personaModel->addPersona($estudiante);
     $estudiante->setPersonaID($personaId);
-    //echo 'personaID '.$estudiante->personaId;
     $query = "INSERT INTO ".$this->table."(personaId, email, prefijoTelefono, telefono,tipoIdentificacion,numeroIdentificacion) 
     VALUES ( '".$personaId."','".$estudiante->email."','".$estudiante->prefijoTelefono."','".$estudiante->telefono."','".$estudiante->tipoIdentificacion."','".$estudiante->numeroIdentificacion."')";
     if($this->bdConnection->query($query)=== TRUE){
-      //echo "Creado estudiante";
       return $personaId;
-    }else{
-      //echo "Error estudiante: ".$query."<br>". $this->bdConnection->error;
-    } 
+    }
     return -1;
     
   }
 
   public function delEstudiante($estudiante){
     $query = "DELETE FROM ".$this->table." WHERE personaId = ".$estudiante->personaId;
-    if($this->bdConnection->query($query)=== TRUE){
-      //echo "Eliminado estudiante";      
+    if($this->bdConnection->query($query)=== TRUE){ 
       $personaModel = new PersonaModel($this->bdConnection);
       return $personaModel->delPersona($estudiante);
-    }else{
-      //echo "Error estudiante: ".$query."<br>". $this->bdConnection->error;
+    } else{
       return false;
     }     
   }
@@ -83,11 +65,9 @@ class EstudiantesModel
     tipoIdentificacion='".$estudiante->tipoIdentificacion."',
     numeroIdentificacion='".$estudiante->numeroIdentificacion."' WHERE personaId=".$estudiante->personaId;
     if($this->bdConnection->query($query)=== TRUE){
-      //echo "Actualizado estudiante"; 
       $personaModel = new PersonaModel($this->bdConnection);
       return $personaModel->updatePersona($estudiante);     
-    }else{
-      //echo "Error actualizar estudiante: ".$query."<br>". $this->bdConnection->error;
+    } else{
       return false;
     }
 

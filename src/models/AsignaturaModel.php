@@ -15,7 +15,6 @@ class AsignaturaModel{
 
     public function getAsignaturas()
     {
-        // TODO
         $query = "SELECT * FROM ".$this->table;
         $result = $this->bdConnection->query($query); 
 

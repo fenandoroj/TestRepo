@@ -19,7 +19,6 @@ class ConexionBD{
         if($this->bdConnection->connect_error){
             die('Error de Conexion ('.$this->bdConnection->connect_errno.')'.$this->bdConnection->connect_error);
         }
-        // echo 'Exito '.$this->bdConnection->host_info.'<br>';
     }
 
     public function closeConexionBD(){

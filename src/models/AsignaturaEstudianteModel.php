@@ -11,8 +11,7 @@ class AsignaturaEstudianteModel{
       $this->bdConnection = $bdConnection;
   }
 
-  public function addAsignaturaEstudiante($asignaturaEstudiante){
-    // TODO
+  public function addAsignaturaEstudiante($asignaturaEstudiante) {
     $query = "INSERT INTO ".$this->table."(asignaturaId, estudianteId) 
     VALUES ( '".$asignaturaEstudiante->asignaturaId."','".$asignaturaEstudiante->estudianteId."')";
     if($this->bdConnection->query($query)=== TRUE){
