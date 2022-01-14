@@ -29,6 +29,6 @@ $result = $estudiantesModel->updateEstudiante($estudiante);
 $titulo = !$result ? 'Error al actualizar el estudiante' : 'Estudiante actualizado correctamente';
 
 // Vista de actualización de estudiante. Podemos reutilizar la vista de estudiante creado
-include_once __DIR__ . '/../views/student-created.php';
+include_once __DIR__ . '/../views/student-confirmation.php';
 
 $conexionBD->closeConexionBD(); // Cerrar conexión a la base de datos

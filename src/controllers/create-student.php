@@ -26,6 +26,6 @@ $insercion = $estudiantesModel->addEstudiante($estudiante);
 $titulo = $insercion == -1 ? 'Error al agregar el estudiante' : 'Estudiante agregado correctamente';
 
 // Vista de confirmación de estudiante
-include_once __DIR__ . '/../views/student-created.php';
+include_once __DIR__ . '/../views/student-confirmation.php';
 
 $conexionBD->closeConexionBD(); // Cerrar conexión a la base de datos
