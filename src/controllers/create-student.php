@@ -27,3 +27,5 @@ $titulo = $insercion == -1 ? 'Error al agregar el estudiante' : 'Estudiante agre
 
 // Vista de confirmación de estudiante
 include_once __DIR__ . '/../views/student-created.php';
+
+$conexionBD->closeConexionBD(); // Cerrar conexión a la base de datos
